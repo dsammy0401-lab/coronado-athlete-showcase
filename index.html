@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sam Dickison Jr. | Coronado Cougars Athlete</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap" rel="stylesheet" />
+  <meta name="description" content="Showcase of Sam Dickison Jr., Coronado Cougars athlete in soccer and wrestling. Class of 2029." />
   <style>
     :root {
       --scarlet: #c10015;
@@ -13,11 +16,15 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       background: var(--light);
       color: var(--dark);
       margin: 0;
       padding: 0;
+    }
+
+    h1, h2.section-title {
+      font-family: 'Anton', sans-serif;
     }
 
     header {
@@ -31,6 +38,9 @@
       background: var(--gold);
       padding: 10px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav a {
@@ -38,6 +48,34 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--scarlet);
+      text-decoration: underline;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 4px;
     }
 
     .container {
@@ -69,6 +107,11 @@
       border-radius: 8px;
       padding: 15px;
       text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
     }
 
     .card img {
@@ -83,24 +126,52 @@
       background: var(--scarlet);
       color: white;
     }
+
+    @media (max-width: 600px) {
+      .highlight-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
+  <header id="home">
     <h1>Sam Dickison Jr.</h1>
     <p>Coronado Cougars | Soccer & Wrestling | Class of 2029</p>
   </header>
 
+  <div class="hero">
+    <img src="your-image-url.jpg" alt="Sam in action">
+    <div class="hero-caption">Sam leading the Cougars to victory</div>
+  </div>
+
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Highlights</a>
-    <a href="#">Achievements</a>
-    <a href="#">Schedule</a>
-    <a href="#">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#highlights">Highlights</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <div class="container">
+  <section id="about" class="container">
+    <h2 class="section-title">Meet Sam AKA Bubb</h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto;">
+      Sam Dickison Jr. is a passionate athlete with a relentless drive. Whether he's sprinting down the soccer field or grappling on the wrestling mat, he brings energy, focus, and leadership to every moment.
+    </p>
+  </section>
+
+  <section id="highlights" class="container">
     <h2 class="section-title">Athletic Highlights</h2>
     <div class="highlight-grid">
       <div class="card">
@@ -120,11 +191,10 @@
         <p>Varsity starter and team motivator</p>
       </div>
     </div>
-  </div>
+  </section>
 
   <footer>
     &copy; 2025 Coronado Cougars Showcase | Proudly built by Dad
   </footer>
 </body>
-</html>
 </html>
